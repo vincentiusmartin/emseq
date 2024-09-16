@@ -1,0 +1,5 @@
+
+
+process TRIM_ADAPTER {
+
+}
