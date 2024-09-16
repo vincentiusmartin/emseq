@@ -1,0 +1,82 @@
+Sep-16 17:06:31.541 [main] DEBUG nextflow.cli.Launcher - $> nextflow run main.nf --input samplesheet_small.csv -resume
+Sep-16 17:06:31.714 [main] INFO  nextflow.cli.CmdRun - N E X T F L O W  ~  version 23.10.0
+Sep-16 17:06:31.754 [main] DEBUG nextflow.plugin.PluginsFacade - Setting up plugin manager > mode=prod; embedded=false; plugins-dir=/home/vmartin/.nextflow/plugins; core-plugins: nf-amazon@2.1.4,nf-azure@1.3.2,nf-cloudcache@0.3.0,nf-codecommit@0.1.5,nf-console@1.0.6,nf-ga4gh@1.1.0,nf-google@1.8.3,nf-tower@1.6.3,nf-wave@1.0.0
+Sep-16 17:06:31.772 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Enabled plugins: []
+Sep-16 17:06:31.773 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Disabled plugins: []
+Sep-16 17:06:31.785 [main] INFO  org.pf4j.DefaultPluginManager - PF4J version 3.4.1 in 'deployment' mode
+Sep-16 17:06:31.796 [main] INFO  org.pf4j.AbstractPluginManager - No plugins
+Sep-16 17:06:31.845 [main] DEBUG nextflow.config.ConfigBuilder - Found config local: /research/rgs01/home/clusterHome/vmartin/projects/loc3car/emseq/nextflow.config
+Sep-16 17:06:31.846 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /research/rgs01/home/clusterHome/vmartin/projects/loc3car/emseq/nextflow.config
+Sep-16 17:06:31.887 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `standard`
+Sep-16 17:06:32.909 [main] DEBUG nextflow.cli.CmdRun - Applied DSL=2 from script declararion
+Sep-16 17:06:32.920 [main] INFO  nextflow.cli.CmdRun - Launching `main.nf` [serene_church] DSL2 - revision: e2460f8e49
+Sep-16 17:06:32.935 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins default=[]
+Sep-16 17:06:32.935 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins resolved requirement=[]
+Sep-16 17:06:32.946 [main] DEBUG n.secret.LocalSecretsProvider - Secrets store: /home/vmartin/.nextflow/secrets/store.json
+Sep-16 17:06:32.963 [main] DEBUG nextflow.secret.SecretsLoader - Discovered secrets providers: [nextflow.secret.LocalSecretsProvider@48b4a043] - activable => nextflow.secret.LocalSecretsProvider@48b4a043
+Sep-16 17:06:33.072 [main] DEBUG nextflow.Session - Session UUID: b9949bf6-ec56-4de8-8cb7-d12439150dd6
+Sep-16 17:06:33.072 [main] DEBUG nextflow.Session - Run name: serene_church
+Sep-16 17:06:33.073 [main] DEBUG nextflow.Session - Executor pool size: 2
+Sep-16 17:06:33.078 [main] DEBUG nextflow.file.FilePorter - File porter settings maxRetries=3; maxTransfers=50; pollTimeout=null
+Sep-16 17:06:33.084 [main] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'FileTransfer' minSize=10; maxSize=10; workQueue=LinkedBlockingQueue[10000]; allowCoreThreadTimeout=false
+Sep-16 17:06:33.161 [main] DEBUG nextflow.cli.CmdRun - 
+  Version: 23.10.0 build 5889
+  Created: 15-10-2023 15:07 UTC (10:07 CDT)
+  System: Linux 4.18.0-305.el8.x86_64
+  Runtime: Groovy 3.0.19 on OpenJDK 64-Bit Server VM 20.0.2+9-78
+  Encoding: UTF-8 (ANSI_X3.4-1968)
+  Process: 1671721@noderome108 [10.220.17.8]
+  CPUs: 1 - Mem: 1007.6 GB (854.1 GB) - Swap: 16 GB (15.6 GB)
+Sep-16 17:06:33.255 [main] DEBUG nextflow.Session - Work-dir: /research/rgs01/home/clusterHome/vmartin/projects/loc3car/emseq/work [gpfs]
+Sep-16 17:06:33.255 [main] DEBUG nextflow.Session - Script base path does not exist or is not a directory: /research/rgs01/home/clusterHome/vmartin/projects/loc3car/emseq/bin
+Sep-16 17:06:33.266 [main] DEBUG nextflow.executor.ExecutorFactory - Extension executors providers=[]
+Sep-16 17:06:33.292 [main] DEBUG nextflow.Session - Observer factory: DefaultObserverFactory
+Sep-16 17:06:33.308 [main] DEBUG nextflow.cache.CacheFactory - Using Nextflow cache factory: nextflow.cache.DefaultCacheFactory
+Sep-16 17:06:33.316 [main] DEBUG nextflow.util.CustomThreadPool - Creating default thread pool > poolSize: 2; maxThreads: 1000
+Sep-16 17:06:33.436 [main] DEBUG nextflow.Session - Session start
+Sep-16 17:06:33.811 [main] DEBUG nextflow.script.ScriptRunner - > Launching execution
+Sep-16 17:06:35.598 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: lsf
+Sep-16 17:06:35.632 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'lsf'
+Sep-16 17:06:35.639 [main] DEBUG nextflow.executor.Executor - [warm up] executor > lsf
+Sep-16 17:06:35.646 [main] DEBUG n.processor.TaskPollingMonitor - Creating task monitor for executor 'lsf' > capacity: 100; pollInterval: 5s; dumpInterval: 5m 
+Sep-16 17:06:35.647 [main] DEBUG n.processor.TaskPollingMonitor - >>> barrier register (monitor: lsf)
+Sep-16 17:06:35.661 [main] DEBUG n.executor.AbstractGridExecutor - Creating executor 'lsf' > queue-stat-interval: 1m
+Sep-16 17:06:35.675 [main] DEBUG nextflow.executor.LsfExecutor - [LSF] Detected lsf.conf LSF_UNIT_FOR_LIMITS=MB
+Sep-16 17:06:35.675 [main] DEBUG nextflow.executor.LsfExecutor - [LSF] Detected lsf.conf LSB_JOB_MEMLIMIT=Y (true)
+Sep-16 17:06:35.768 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:process_high` matches labels `process_high` for process with name EMSEQ:BBDUK_TRIM
+Sep-16 17:06:35.771 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: lsf
+Sep-16 17:06:35.772 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'lsf'
+Sep-16 17:06:35.776 [main] DEBUG nextflow.Session - Workflow process names [dsl2]: FASTQC, BBDUK_TRIM, EMSEQ:CAT_FASTQ, CAT_FASTQ, EMSEQ:BBDUK_TRIM
+Sep-16 17:06:35.776 [main] DEBUG nextflow.Session - Igniting dataflow network (3)
+Sep-16 17:06:35.793 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > EMSEQ:CAT_FASTQ
+Sep-16 17:06:35.794 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > EMSEQ:BBDUK_TRIM
+Sep-16 17:06:35.794 [main] DEBUG nextflow.script.ScriptRunner - Parsed script files:
+  Script_9b6b943dd110a2b6: /research/rgs01/home/clusterHome/vmartin/projects/loc3car/emseq/./workflows/../modules/cat/fastq/main.nf
+  Script_8de537f14346aae2: /research/rgs01/home/clusterHome/vmartin/projects/loc3car/emseq/main.nf
+  Script_7ff80dc82ac356c3: /research/rgs01/home/clusterHome/vmartin/projects/loc3car/emseq/./workflows/../modules/fastqc/main.nf
+  Script_acca536d80675c7f: /research/rgs01/home/clusterHome/vmartin/projects/loc3car/emseq/./workflows/../modules/bbmap/main.nf
+  Script_175b26287b558a5a: /research/rgs01/home/clusterHome/vmartin/projects/loc3car/emseq/./workflows/emseq.nf
+Sep-16 17:06:35.794 [main] DEBUG nextflow.script.ScriptRunner - > Awaiting termination 
+Sep-16 17:06:35.794 [main] DEBUG nextflow.Session - Session await
+Sep-16 17:06:36.206 [Actor Thread 4] INFO  nextflow.processor.TaskProcessor - [04/b9111e] Cached process > EMSEQ:CAT_FASTQ (SJHBBBX9S3Y)
+Sep-16 17:06:36.961 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [LSF] submitted process EMSEQ:BBDUK_TRIM (SJHBBBWQ82X) > jobId: 237841791; workDir: /research/rgs01/home/clusterHome/vmartin/projects/loc3car/emseq/work/b3/06041741bcba8af0a08d0fdfd2016a
+Sep-16 17:06:36.961 [Task submitter] INFO  nextflow.Session - [b3/060417] Submitted process > EMSEQ:BBDUK_TRIM (SJHBBBWQ82X)
+Sep-16 17:06:37.920 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [LSF] submitted process EMSEQ:BBDUK_TRIM (SJHBBBX9S3Y) > jobId: 237841793; workDir: /research/rgs01/home/clusterHome/vmartin/projects/loc3car/emseq/work/cc/9733f5ed0e4f685be22423c6f00203
+Sep-16 17:06:37.920 [Task submitter] INFO  nextflow.Session - [cc/9733f5] Submitted process > EMSEQ:BBDUK_TRIM (SJHBBBX9S3Y)
+Sep-16 17:11:40.660 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor lsf > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[jobId: 237841791; id: 1; name: EMSEQ:BBDUK_TRIM (SJHBBBWQ82X); status: RUNNING; exit: -; error: -; workDir: /research/rgs01/home/clusterHome/vmartin/projects/loc3car/emseq/work/b3/06041741bcba8af0a08d0fdfd2016a started: 1726524410655; exited: -; ]
+~> TaskHandler[jobId: 237841793; id: 3; name: EMSEQ:BBDUK_TRIM (SJHBBBX9S3Y); status: RUNNING; exit: -; error: -; workDir: /research/rgs01/home/clusterHome/vmartin/projects/loc3car/emseq/work/cc/9733f5ed0e4f685be22423c6f00203 started: 1726524415656; exited: -; ]
+Sep-16 17:16:41.553 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor lsf > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[jobId: 237841791; id: 1; name: EMSEQ:BBDUK_TRIM (SJHBBBWQ82X); status: RUNNING; exit: -; error: -; workDir: /research/rgs01/home/clusterHome/vmartin/projects/loc3car/emseq/work/b3/06041741bcba8af0a08d0fdfd2016a started: 1726524410655; exited: -; ]
+~> TaskHandler[jobId: 237841793; id: 3; name: EMSEQ:BBDUK_TRIM (SJHBBBX9S3Y); status: RUNNING; exit: -; error: -; workDir: /research/rgs01/home/clusterHome/vmartin/projects/loc3car/emseq/work/cc/9733f5ed0e4f685be22423c6f00203 started: 1726524415656; exited: -; ]
+Sep-16 17:21:41.560 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor lsf > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[jobId: 237841791; id: 1; name: EMSEQ:BBDUK_TRIM (SJHBBBWQ82X); status: RUNNING; exit: -; error: -; workDir: /research/rgs01/home/clusterHome/vmartin/projects/loc3car/emseq/work/b3/06041741bcba8af0a08d0fdfd2016a started: 1726524410655; exited: -; ]
+~> TaskHandler[jobId: 237841793; id: 3; name: EMSEQ:BBDUK_TRIM (SJHBBBX9S3Y); status: RUNNING; exit: -; error: -; workDir: /research/rgs01/home/clusterHome/vmartin/projects/loc3car/emseq/work/cc/9733f5ed0e4f685be22423c6f00203 started: 1726524415656; exited: -; ]
+Sep-16 17:26:23.270 [SIGINT handler] DEBUG nextflow.Session - Session aborted -- Cause: SIGINT
+Sep-16 17:26:23.327 [Task monitor] DEBUG n.processor.TaskPollingMonitor - <<< barrier arrives (monitor: lsf) - terminating tasks monitor poll loop
+Sep-16 17:26:23.327 [main] DEBUG nextflow.Session - Session await > all processes finished
+Sep-16 17:26:23.328 [main] DEBUG nextflow.Session - Session await > all barriers passed
+Sep-16 17:26:23.331 [main] WARN  n.processor.TaskPollingMonitor - Killing running tasks (2)
+Sep-16 17:26:23.547 [main] DEBUG n.trace.WorkflowStatsObserver - Workflow completed > WorkflowStats[succeededCount=0; failedCount=0; ignoredCount=0; cachedCount=1; pendingCount=0; submittedCount=0; runningCount=0; retriesCount=0; abortedCount=2; succeedDuration=0ms; failedDuration=0ms; cachedDuration=15.2s;loadCpus=0; loadMemory=0; peakRunning=2; peakCpus=2; peakMemory=128 GB; ]
+Sep-16 17:26:23.657 [main] DEBUG nextflow.cache.CacheDB - Closing CacheDB done
+Sep-16 17:26:23.703 [main] DEBUG nextflow.script.ScriptRunner - > Execution complete -- Goodbye

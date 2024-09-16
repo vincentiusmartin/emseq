@@ -1,5 +1,6 @@
 process CAT_FASTQ {
     tag "$meta.id"
+    label 'process_med'
 
     input:
     tuple val(meta), path(reads)

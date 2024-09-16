@@ -6,7 +6,8 @@
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 */
 include { CAT_FASTQ } from '../modules/cat/fastq/main'
-
+include { FASTQC } from '../modules/fastqc/main'
+include { BBDUK_TRIM } from '../modules/bbmap/main'
 
 /*
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -40,6 +41,19 @@ workflow EMSEQ {
     // MODULE: Concatenate FastQ files from same sample if required
     //
     CAT_FASTQ(ch_fastq.multiple)
+        .mix(ch_fastq.single)
+        .set { ch_cat_fastq }
+
+    //
+    // MODULE: Run FastQC
+    //
+    FASTQC(ch_cat_fastq)
+
+    //
+    // MODULE: BBDUK_TRIM
+    //
+    BBDUK_TRIM(ch_cat_fastq)
+    
 
 }
 

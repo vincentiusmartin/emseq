@@ -1,0 +1,19 @@
+2024-09-16 15:09:45	18.8s	magical_planck	OK	e2460f8e498f79aa218d0902ce112e1c	b9949bf6-ec56-4de8-8cb7-d12439150dd6	nextflow run main.nf --input samplesheet_small.csv
+2024-09-16 15:39:02	4.7s	small_lamarck	ERR	e2460f8e498f79aa218d0902ce112e1c	b9949bf6-ec56-4de8-8cb7-d12439150dd6	nextflow run main.nf --input samplesheet_small.csv -resume
+2024-09-16 15:39:52	-	gloomy_gautier	-	e2460f8e498f79aa218d0902ce112e1c	b9949bf6-ec56-4de8-8cb7-d12439150dd6	nextflow run main.nf --input samplesheet_small.csv -resume
+2024-09-16 15:40:05	-	tender_faraday	-	e2460f8e498f79aa218d0902ce112e1c	b9949bf6-ec56-4de8-8cb7-d12439150dd6	nextflow run main.nf --input samplesheet_small.csv -resume
+2024-09-16 15:40:11	4.2s	clever_wright	ERR	e2460f8e498f79aa218d0902ce112e1c	b9949bf6-ec56-4de8-8cb7-d12439150dd6	nextflow run main.nf --input samplesheet_small.csv -resume
+2024-09-16 15:41:46	4.5s	gigantic_euclid	OK	e2460f8e498f79aa218d0902ce112e1c	b9949bf6-ec56-4de8-8cb7-d12439150dd6	nextflow run main.nf --input samplesheet_small.csv -resume
+2024-09-16 15:43:47	44m 59s	backstabbing_fourier	ERR	e2460f8e498f79aa218d0902ce112e1c	b9949bf6-ec56-4de8-8cb7-d12439150dd6	nextflow run main.nf --input samplesheet_small.csv -resume
+2024-09-16 16:29:32	-	ridiculous_borg	-	e2460f8e498f79aa218d0902ce112e1c	b9949bf6-ec56-4de8-8cb7-d12439150dd6	nextflow run main.nf --input samplesheet_small.csv -resume
+2024-09-16 16:30:19	4.2s	cheeky_legentil	OK	e2460f8e498f79aa218d0902ce112e1c	b9949bf6-ec56-4de8-8cb7-d12439150dd6	nextflow run main.nf --input samplesheet_small.csv -resume
+2024-09-16 16:36:54	3.8s	hopeful_tuckerman	OK	e2460f8e498f79aa218d0902ce112e1c	b9949bf6-ec56-4de8-8cb7-d12439150dd6	nextflow run main.nf --input samplesheet_small.csv -resume
+2024-09-16 16:41:06	15.2s	deadly_dubinsky	ERR	e2460f8e498f79aa218d0902ce112e1c	b9949bf6-ec56-4de8-8cb7-d12439150dd6	nextflow run main.nf --input samplesheet_small.csv -resume
+2024-09-16 16:52:50	-	berserk_pasteur	-	e2460f8e498f79aa218d0902ce112e1c	b9949bf6-ec56-4de8-8cb7-d12439150dd6	nextflow run main.nf --input samplesheet_small.csv -resume
+2024-09-16 16:54:32	4.4s	marvelous_venter	ERR	e2460f8e498f79aa218d0902ce112e1c	b9949bf6-ec56-4de8-8cb7-d12439150dd6	nextflow run main.nf --input samplesheet_small.csv -resume
+2024-09-16 17:00:46	4.9s	small_shannon	ERR	e2460f8e498f79aa218d0902ce112e1c	b9949bf6-ec56-4de8-8cb7-d12439150dd6	nextflow run main.nf --input samplesheet_small.csv -resume
+2024-09-16 17:02:04	4.7s	small_hypatia	ERR	e2460f8e498f79aa218d0902ce112e1c	b9949bf6-ec56-4de8-8cb7-d12439150dd6	nextflow run main.nf --input samplesheet_small.csv -resume
+2024-09-16 17:05:12	1m 16s	backstabbing_knuth	ERR	e2460f8e498f79aa218d0902ce112e1c	b9949bf6-ec56-4de8-8cb7-d12439150dd6	nextflow run main.nf --input samplesheet_small.csv -resume
+2024-09-16 17:06:33	19m 51s	serene_church	ERR	e2460f8e498f79aa218d0902ce112e1c	b9949bf6-ec56-4de8-8cb7-d12439150dd6	nextflow run main.nf --input samplesheet_small.csv -resume
+2024-09-16 17:29:53	43.7s	wise_ride	ERR	e2460f8e498f79aa218d0902ce112e1c	cb9b3ab1-5991-4296-bb79-1edf295c7a91	nextflow run main.nf --input samplesheet_small.csv -bg
+2024-09-16 17:43:41	-	angry_saha	-	e2460f8e498f79aa218d0902ce112e1c	cb9b3ab1-5991-4296-bb79-1edf295c7a91	nextflow run main.nf --input samplesheet_small.csv -bg -resume
