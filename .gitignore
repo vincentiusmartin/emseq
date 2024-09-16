@@ -2,4 +2,5 @@ work/*
 samplesheet*
 loadmodules.sh
 
+.nextflow*
 *.ipynb_checkpoints*
