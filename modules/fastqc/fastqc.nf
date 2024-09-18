@@ -1,7 +1,7 @@
 process FASTQC {
     tag "$meta.id"
     label 'process_high'
-    publishDir "${params.outdir}/fastqc"
+    publishDir "${params.outdir}/fastqc", mode: 'copy'
 
     module "fastqc/0.11.8"
 

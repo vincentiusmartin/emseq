@@ -1,7 +1,7 @@
 process BBDUK_TRIM {
     tag "$meta.id"
     label 'process_high'
-    publishDir "${params.outdir}/bbduk"
+    publishDir "${params.outdir}/bbduk", mode: 'copy'
 
     module "bbmap"
 
@@ -24,7 +24,7 @@ process BBDUK_TRIM {
     }
 
     def args_list = ["ktrim=r", "k=${params.bbduk_k}", "hdist=${params.hdist}", 
-                    "mink=${params.mink}", "ref=${params.ref}", "rcomp=f",
+                    "mink=${params.mink}", "ref=${params.adapter_ref}", "rcomp=f",
                     "ordered=t","tbo=t","tpe=t", "threads=$cores"]
 
     if (meta.single_end) {

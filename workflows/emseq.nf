@@ -5,9 +5,14 @@
     IMPORT MODULES/SUBWORKFLOWS
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 */
-include { CAT_FASTQ } from '../modules/cat/fastq/main'
-include { FASTQC } from '../modules/fastqc/main'
-include { BBDUK_TRIM } from '../modules/bbmap/main'
+include { CAT_FASTQ } from '../modules/cat/fastq'
+include { FASTQC } from '../modules/fastqc/fastqc'
+include { BBDUK_TRIM } from '../modules/bbmap/bbduk'
+include { BISCUIT_ALIGN } from '../modules/biscuit/align'
+include { BISCUIT_PILEUP } from '../modules/biscuit/pileup'
+include { BISCUIT_VCF2BED_MET } from '../modules/biscuit/vcf2bed'
+include { BISCUIT_VCF2BED_SNP } from '../modules/biscuit/vcf2bed'
+include { MARK_DUPLICATES } from '../modules/gatk/markduplicates'
 
 /*
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -53,7 +58,23 @@ workflow EMSEQ {
     // MODULE: BBDUK_TRIM
     //
     BBDUK_TRIM(ch_cat_fastq)
-    
+        .set{ ch_trimmed_fastq }
 
+    //
+    // Alignment (biscuit) and mark duplicates (gatk)
+    //
+    ch_trimmed_fastq | BISCUIT_ALIGN | MARK_DUPLICATES
+
+    //
+    // MODULE: BISCUIT_PILEUP
+    //
+    BISCUIT_PILEUP( MARK_DUPLICATES.out.dup )
+
+    //
+    // MODULE: METHYLATION AND MUTATION CALLS
+    //
+    BISCUIT_VCF2BED_MET( BISCUIT_PILEUP.out.pileup )
+    BISCUIT_VCF2BED_SNP( BISCUIT_PILEUP.out.pileup )
+    
 }
 
