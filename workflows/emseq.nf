@@ -13,6 +13,7 @@ include { BISCUIT_PILEUP } from '../modules/biscuit/pileup'
 include { BISCUIT_VCF2BED_MET } from '../modules/biscuit/vcf2bed'
 include { BISCUIT_VCF2BED_SNP } from '../modules/biscuit/vcf2bed'
 include { MARK_DUPLICATES } from '../modules/gatk/markduplicates'
+include { METHYLDACKEL } from '../modules/methyldackel/methyldackel'
 
 /*
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -42,37 +43,28 @@ workflow EMSEQ {
         }
         .set { ch_fastq }
 
-    //
     // MODULE: Concatenate FastQ files from same sample if required
-    //
     CAT_FASTQ(ch_fastq.multiple)
         .mix(ch_fastq.single)
         .set { ch_cat_fastq }
 
-    //
     // MODULE: Run FastQC
-    //
     FASTQC(ch_cat_fastq)
 
-    //
     // MODULE: BBDUK_TRIM
-    //
     BBDUK_TRIM(ch_cat_fastq)
         .set{ ch_trimmed_fastq }
 
-    //
     // Alignment (biscuit) and mark duplicates (gatk)
-    //
     ch_trimmed_fastq | BISCUIT_ALIGN | MARK_DUPLICATES
 
-    //
+    // Perform Methylation call
+    METHYLDACKEL ( MARK_DUPLICATES.out.dup )
+
     // MODULE: BISCUIT_PILEUP
-    //
     BISCUIT_PILEUP( MARK_DUPLICATES.out.dup )
 
-    //
     // MODULE: METHYLATION AND MUTATION CALLS
-    //
     BISCUIT_VCF2BED_MET( BISCUIT_PILEUP.out.pileup )
     BISCUIT_VCF2BED_SNP( BISCUIT_PILEUP.out.pileup )
     

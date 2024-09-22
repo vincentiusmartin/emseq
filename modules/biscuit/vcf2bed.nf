@@ -3,6 +3,7 @@
 process BISCUIT_VCF2BED_MET {
     tag "$meta.id"
     label 'process_high'
+    errorStrategy 'ignore'
 
     module 'mamba'
     conda '/research/groups/northcgrp/home/common/Vincentius/envs/biscuit'
@@ -19,13 +20,14 @@ process BISCUIT_VCF2BED_MET {
     def prefix = task.ext.prefix ?: "${meta.id}"
     """
     biscuit vcf2bed -t cg -k ${params.met_coverage} -c ${prefix}_pileup.vcf.gz > ${prefix}_met.bed
-    biscuit mergecg ${params.genome_ref} ${prefix}_met.bed
+    #biscuit mergecg ${params.genome_ref} ${prefix}_met.bed
     """
 }
 
 process BISCUIT_VCF2BED_SNP {
     tag "$meta.id"
     label 'process_high'
+    errorStrategy 'ignore'
 
     module 'mamba'
     conda '/research/groups/northcgrp/home/common/Vincentius/envs/biscuit'

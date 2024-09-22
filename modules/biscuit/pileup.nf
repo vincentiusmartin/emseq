@@ -5,6 +5,7 @@
 process BISCUIT_PILEUP {
     tag "$meta.id"
     label 'process_high'
+    errorStrategy 'ignore'
 
     module 'mamba'
     conda '/research/groups/northcgrp/home/common/Vincentius/envs/biscuit'
